@@ -23,5 +23,5 @@ Final Note
 ====
 For feedback email me or raise a issue in the issues section.
 
-Regards\n
+Regards<br>
 Arun Kumar Shreevastava
