@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/thumbnail_background"
+                tools:context=".activity_frag.HelpActivity">
+    <TextView
+        android:paddingTop="5dp"
+        android:id="@+id/caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:paddingBottom="5dp"/>
+
+    <com.arunkr.saavn.downloader.TouchImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/large_image_iv"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/caption"/>
+
+    <ImageButton
+        android:id="@+id/imgBtn_left"
+        android:layout_width="50dp"
+        android:layout_gravity="start"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_left"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageButton
+        android:id="@+id/imgBtn_right"
+        android:layout_width="50dp"
+        android:layout_gravity="end"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_right"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+
+        android:scaleType="centerCrop"/>
+
+</RelativeLayout>

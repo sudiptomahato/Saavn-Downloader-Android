@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!---<SwitchPreference
+        android:key="preference_use_album_name"
+        android:title="@string/preference_use_album_name"
+        android:summary="@string/preference_use_album_name_summary"
+        android:defaultValue="false"
+        />
+        -->
+
+    <SwitchPreference
+        android:key="preference_max_quality"
+        android:title="@string/preference_max_quality"
+        android:summary="@string/preference_max_quality_summary"
+        android:defaultValue="true"
+        />
+
+    <Preference
+        android:key="preference_save_location"
+        android:title="@string/preference_save_location"
+        android:summary="@string/preference_save_location_summary"
+        android:dialogTitle="@string/preference_save_location"
+        android:dialogMessage="@string/preference_save_location_summary"
+        android:inputType="text"
+        android:defaultValue="Music"
+        />
+</PreferenceScreen>

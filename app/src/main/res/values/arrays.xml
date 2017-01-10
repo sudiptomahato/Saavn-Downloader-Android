@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="instructions_caption">
+        <item>Share a playlist</item>
+        <item>Or share a individual Song</item>
+        <item>Select Saavn Downloader</item>
+        <item>Enjoy!! Cazzz :)</item>
+    </string-array>
+</resources>

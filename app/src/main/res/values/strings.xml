@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Saavn Downloader</string>
+    <string name="about_disclaimer">Use it at your own risk.\nI should not be held responsible for anything whatsoever\nCazzz :)</string>
+
+    <string name="about_me">C0d3d for Fun.\nBy Arun Kumar Shreevastava</string>
+
+    <string name="no_permission">PERMISSIONS NOT AVAILABLE</string>
+    <string name="permission_rationale_title">Permission required</string>
+    <string name="permission_rationale_storage">Storage read/write permission is required to save songs</string>
+    <string name="usage_text">Wanna take a trip around the app?</string>
+    <string name="help_positive">Ya sure</string>
+    <string name="help_negative">Later</string>
+    <string name="help_title">Need Help?</string>
+    <string name="album_name_hint">Enter Album Name</string>
+    <string name="enter_url_hint">Enter url from webpage eg http://www.saavn.com/s/album/hindi/Ae-Dil-Hai-Mushkil-2016/2ByTwH6xkWk_</string>
+    <string name="about_app">You need Saavn app installed for this app to work.</string>
+
+    <string name="click_to_install">Click here to install Saavn from Playstore\n\nBy default files are saved in Music Folder in External Storage.</string>
+
+    <string name="saavn_package_name">com.saavn.android</string>
+
+    <string name="update_available">A new version of Saavn Downloader is available, do you want to update.</string>
+
+
+    <string name="parent_folder">Parent Folder</string>
+    <string name="use_folder">Use Folder</string>
+    <string name="new_folder">New Folder</string>
+    <string name="cant_write_folder">Can\'t write to this folder</string>
+    <string name="cant_access_folder">Can\'t access this folder</string>
+    <string name="enter_new_folder">Enter new folder name</string>
+    <string name="failed_create_folder">Failed to create folder</string>
+    <string name="folder_exists">Folder already exists</string>
+
+
+    <string name="preference_use_album_name">Download as Album</string>
+    <string name="preference_use_album_name_summary">Check it to download all songs to a single folder (as per album title)</string>
+
+    <string name="preference_save_location">Save location</string>
+    <string name="preference_save_location_summary">Folder to save the music files in, click to change</string>
+
+    <string name="preference_max_quality">Want max quality</string>
+    <string name="preference_max_quality_summary">Turn on to get max quality audio.</string>
+
+</resources>

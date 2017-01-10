@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/select_all"
+        android:title="Select all"
+        android:icon="@drawable/ic_select_all"
+        />
+    <item
+        android:id="@+id/download"
+        android:title="Download"
+        android:icon="@drawable/ic_down_all"/>
+
+
+</menu>

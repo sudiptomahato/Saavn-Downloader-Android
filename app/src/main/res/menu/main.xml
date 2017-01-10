@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btn_down_all"
+        android:orderInCategory="1"
+        android:title="DownAll"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_down_all"/>
+    <item
+        android:id="@+id/btn_add"
+        android:orderInCategory="2"
+        android:title="Enter link"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/btn_help"
+        android:orderInCategory="3"
+        android:title="Help"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/btn_about"
+        android:orderInCategory="4"
+        android:title="About"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/btn_settings"
+        android:orderInCategory="5"
+        android:title="Settings"
+        app:showAsAction="never"
+        />
+</menu>
