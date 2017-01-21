@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity
     private static final String host_address = "http://www.saavn.com";
 
     SharedPreferences sharedPreferences;
-    long update_download_id=-1;
     DownloadManager downloadManager;
 
     static boolean active;
@@ -486,24 +485,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    BroadcastReceiver onComplete=new BroadcastReceiver()
-    {
-        public void onReceive(Context ctxt, Intent intent)
-        {
-            Bundle extras = intent.getExtras();
-            Long downloaded_id = extras.getLong(DownloadManager.EXTRA_DOWNLOAD_ID);
-            if(downloaded_id == update_download_id)
-            {
-                downloadingDialog.dismiss();
-                Intent installIntent = new Intent(Intent.ACTION_VIEW);
-                installIntent.setDataAndType(downloadManager.getUriForDownloadedFile(downloaded_id),
-                        "application/vnd.android.package-archive");
-                installIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // without this flag android returned a intent error!
-                startActivity(installIntent);
-            }
-        }
-    };
-
     public class ProcessLink extends AsyncTask<String, Void,Void>
     {
         String L = "hindi|english|tamil|telugu|punjabi|marathi|gujarati|bengali|kannada|bhojpuri|malayalam|urdu|rajasthani|odia";
@@ -665,6 +646,11 @@ public class MainActivity extends AppCompatActivity
                     return;
                 for (Song s : result)
                 {
+                    String encUrl = s.moreInfo.encryptedMediaUrl;
+                    if(encUrl==null || encUrl.equals("") || encUrl.equalsIgnoreCase("us98KHesG0c=")) //check if url is null
+                    {
+                        continue;
+                    }
                     SongInfo song = new SongInfo();
                     song.setSong_name(s.title);
                     song.setLanguage(s.language);
@@ -678,11 +664,11 @@ public class MainActivity extends AppCompatActivity
                     if(Boolean.parseBoolean(s.moreInfo._320kbps)
                             && Utils.getIsMaxQualityRequested(MainActivity.this))
                     {
-                        song.setDownload_url(s.moreInfo.encryptedMediaUrl,true);
+                        song.setDownload_url(encUrl,true);
                     }
                     else
                     {
-                        song.setDownload_url(s.moreInfo.encryptedMediaUrl,false);
+                        song.setDownload_url(encUrl,false);
                     }
                     songs_list.add(song);
                 }
@@ -709,6 +695,11 @@ public class MainActivity extends AppCompatActivity
                     return;
                 for (Song s : result)
                 {
+                    String encUrl = s.moreInfo.encryptedMediaUrl;
+                    if(encUrl==null || encUrl.equals("") || encUrl.equalsIgnoreCase("us98KHesG0c=")) //check if url is null
+                    {
+                        continue;
+                    }
                     SongInfo song = new SongInfo();
                     song.setSong_name(s.title);
                     song.setLanguage(s.language);
@@ -719,7 +710,7 @@ public class MainActivity extends AppCompatActivity
                     {
                         song.setArtist_name(s.moreInfo.artistMap.primaryArtists.get(0).name);
                     }
-                    song.setDownload_url(s.moreInfo.encryptedMediaUrl,false);
+                    song.setDownload_url(encUrl,false);
                     songs_list.add(song);
                 }
                 progressDialog.dismiss();
@@ -743,6 +734,11 @@ public class MainActivity extends AppCompatActivity
                     songs_list.clear();
                 else
                     return;
+                String encUrl = s.moreInfo.encryptedMediaUrl;
+                if(encUrl==null || encUrl.equals("") || encUrl.equalsIgnoreCase("us98KHesG0c=")) //check if url is null
+                {
+                    return;
+                }
                 SongInfo song = new SongInfo();
                 song.setSong_name(s.title);
                 song.setLanguage(s.language);
@@ -753,7 +749,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     song.setArtist_name(s.moreInfo.artistMap.primaryArtists.get(0).name);
                 }
-                song.setDownload_url(s.moreInfo.encryptedMediaUrl,false);
+                song.setDownload_url(encUrl,false);
                 songs_list.add(song);
 
                 progressDialog.dismiss();
@@ -780,7 +776,8 @@ public class MainActivity extends AppCompatActivity
                     return;
                 for (Song s : result)
                 {
-                    if(s.moreInfo.encryptedMediaUrl.equalsIgnoreCase("us98KHesG0c=")) //check if url is null
+                    String encUrl = s.moreInfo.encryptedMediaUrl;
+                    if(encUrl==null || encUrl.equals("") || encUrl.equalsIgnoreCase("us98KHesG0c=")) //check if url is null
                     {
                         continue;
                     }
@@ -804,11 +801,11 @@ public class MainActivity extends AppCompatActivity
                     if(Boolean.getBoolean(s.moreInfo._320kbps)
                             && Utils.getIsMaxQualityRequested(MainActivity.this))
                     {
-                        song.setDownload_url(s.moreInfo.encryptedMediaUrl,true);
+                        song.setDownload_url(encUrl,true);
                     }
                     else
                     {
-                        song.setDownload_url(s.moreInfo.encryptedMediaUrl,false);
+                        song.setDownload_url(encUrl,false);
                     }
                     songs_list.add(song);
                 }

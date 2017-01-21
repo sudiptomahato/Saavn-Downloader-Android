@@ -97,7 +97,12 @@ public class SongInfo implements Parcelable
     {
         String output = link;
 
-        extension = link.substring(link.lastIndexOf('.'));
+        int index =link.lastIndexOf('.');
+
+        if(index==-1)
+            return "";
+
+        extension = link.substring(index);
         if(extension.equals(".mp4"))
             extension = ".m4a";
 
