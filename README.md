@@ -11,7 +11,7 @@ Building
 ====
 Use Android Studio (i used version 2.2.3 at the time of writing and build tools) or gradle from command line to build it nothing fancy in this. Or Google it if you don't know how to build it.
 
-I will not be releasing any pre build apks.
+Or use prebuilt apk from release section https://github.com/arunKumarNOP/Saavn-Downloader-Android/releases.
 
 
 Disclaimer
@@ -23,5 +23,5 @@ Final Note
 ====
 For feedback email me or raise a issue in the issues section.
 
-Regards
+Regards<br>
 Arun Kumar Shreevastava
